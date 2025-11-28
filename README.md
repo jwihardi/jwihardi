@@ -8,7 +8,7 @@
 
 <br />
 
-### Linux Distributions 
+### Linux Distros
 <a href="https://www.gentoo.org/"><img align="left" width="26px" src="https://github.com/user-attachments/assets/4b753485-996b-4d26-b6ec-0bfaede89b85" /></a>
 <a href="https://archlinux.org/"><img align="left" width="26px" src="https://github.com/user-attachments/assets/0404e79e-9cb4-4fc3-8e44-e62b0146f17e" /></a>
 <a href="https://ubuntu.com/"><img align="left" width="26px" src="https://github.com/user-attachments/assets/c3660ffc-2618-4eac-aba9-2403277cb969" /></a>
