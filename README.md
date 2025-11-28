@@ -1,4 +1,3 @@
-
 ### Languages
 <a href="https://isocpp.org/"><img align="left" width="26px" src="https://github.com/user-attachments/assets/7417d588-2726-4d95-aa57-2e41ec2806e4" /></a>
 <a href="https://learn.microsoft.com/en-us/dotnet/csharp/"><img align="left" width="26px" src="https://github.com/user-attachments/assets/2a5e4377-429b-4a75-b6d3-7b06ea529873" /></a>
@@ -21,4 +20,19 @@
 ### Tools
 <a href="https://www.blender.org/"><img align="left" width="26px" src="https://github.com/user-attachments/assets/34de28fb-4e5e-490a-8af0-34b736fdc1d7" /></a>
 <a href="https://www.blender.org/"><img align="left" width="26px" src="https://github.com/user-attachments/assets/363ccf87-5794-4913-aa81-2586fb316485" /></a>
+<a href="https://bitbucket.org/product/"><img align="left" width="26px" src="https://github.com/user-attachments/assets/805638f6-b28d-435f-a5e5-78adaa909361" /></a>
+<a href="https://www.atlassian.com/software/confluence"><img align="left" width="26px" src="https://github.com/user-attachments/assets/0105b3af-8582-4eef-9ee7-1e7d3e5b6396" /></a>
+<a href="https://www.docker.com/"><img align="left" width="26px" src="https://github.com/user-attachments/assets/945f0698-12d9-464f-a280-d88807a08ab1" /></a>
+<a href="https://firebase.google.com/"><img align="left" width="26px" src="https://github.com/user-attachments/assets/c7f42e4e-f70c-4058-8a88-4e5f380845ab" /></a>
+<a href="https://nextjs.org/"><img align="left" width="26px" src="https://github.com/user-attachments/assets/f762bebf-69b1-4b6d-8775-a25cff1581b3" /></a>
+<a href="https://git-scm.com/"><img align="left" width="26px" src="https://github.com/user-attachments/assets/555870c2-8751-4824-8353-d3ced69ec860" /></a>
+<a href="https://pandas.pydata.org/"><img align="left" width="26px" src="https://github.com/user-attachments/assets/1214b877-d1e2-4cc7-a513-d61d322df8cc" /></a>
+<a href="https://jupyter.org/"><img align="left" width="26px" src="https://github.com/user-attachments/assets/651eeff5-0ce6-40ca-b9cb-143634622faf" /></a>
+<a href="https://colab.google/"><img align="left" width="26px" src="https://github.com/user-attachments/assets/313624ff-1ea0-44d1-9214-0e64d35d2ea5" /></a>
+
+
+
+
+
+
 
