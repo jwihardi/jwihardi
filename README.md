@@ -16,5 +16,9 @@
 <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux"><img align="left" width="36px" src="https://github.com/user-attachments/assets/23adce5d-665b-4800-af17-8a03533fa5a0" /></a>
 <a href="https://rockylinux.org/"><img align="left" width="26px" src="https://github.com/user-attachments/assets/d75d83ff-92f1-4793-809d-abd0067c2f6b" /></a>
 
+<br />
 
+### Tools
+<a href="https://www.blender.org/"><img align="left" width="26px" src="https://github.com/user-attachments/assets/34de28fb-4e5e-490a-8af0-34b736fdc1d7" /></a>
+<a href="https://www.blender.org/"><img align="left" width="26px" src="https://github.com/user-attachments/assets/363ccf87-5794-4913-aa81-2586fb316485" /></a>
 
