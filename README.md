@@ -1,12 +1,9 @@
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?size=25&duration=6000&pause=10000&color=87CEEB&center=true&width=500&lines=Currently+Listening+To" />
-</p>
-
-<p align="center">
+<div align="center">
+  <h3>Listening To</h3>
   <a href="https://allarkvarkk.pythonanywhere.com/">
     <img
-      src="https://allarkvarkk.pythonanywhere.com/?scan=false&theme=dark&eq_color=rainbow"
+      src="https://allarkvarkk.pythonanywhere.com/?spin=false&theme=dark&eq_color=rainbow"
       alt="Current Spotify Song"
     />
   </a>
-</p>
+</div>
