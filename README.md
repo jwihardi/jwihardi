@@ -19,7 +19,7 @@
 [![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)](https://www.gnu.org/software/bash/)
 [![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)](https://dotnet.microsoft.com/en-us/languages/csharp)
 [![OCaml](https://img.shields.io/badge/OCaml-3be133?style=for-the-badge&logo=ocaml&logoColor=white)](https://ocaml.org/)
-![MIPS](https://img.shields.io/badge/MIPS-000000?style=for-the-badge&logo=gnu&logoColor=white)
+![MIPS](https://img.shields.io/badge/MIPS-000000?style=for-the-badge&logo=microchip&logoColor=white)
 
 ## Tools & Frameworks
 [![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
