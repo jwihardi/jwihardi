@@ -37,7 +37,7 @@
 [![Gentoo](https://img.shields.io/badge/Gentoo-54478C?style=for-the-badge&logo=gentoo&logoColor=white)](https://www.gentoo.org/)
 [![Hyprland](https://img.shields.io/badge/Hyprland-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hyprwm/Hyprland)
 [![Illogical-Impulse](https://img.shields.io/badge/Illogical--Impulse-FF6600?style=for-the-badge&logo=github&logoColor=white)](https://github.com/end-4/dots-hyprland)
-[![Neovim](https://img.shields.io/badge/Neovim-57A143?style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io/)
+[![Neovim](https://img.shields.io/badge/Neovim-4B4B4B?style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io/)
 
 ## Fun Facts / Hobbies
 - 🎹 Piano  
