@@ -43,7 +43,7 @@
 - 🎮 Video games  
 - 🎹 Piano  
 - 🏊 Swimming
-- 🎵 [Hans Zimmer](https://open.spotify.com/artist/0YC192cP3KPCRWx8zr8MfZv) & [Matt Maltese](https://open.spotify.com/artist/12j6dJrPXanCBwY599pZxf) fan
+- 🎵 [Hans Zimmer](https://open.spotify.com/artist/0YC192cP3KPCRWx8zr8MfZ) & [Matt Maltese](https://open.spotify.com/artist/12j6dJrPXanCBwY599pZxf) fan
 
 
 
