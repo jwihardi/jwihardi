@@ -8,7 +8,7 @@
   </a>
 </div>
 
-### 📝 Languages
+### Languages
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
@@ -19,7 +19,7 @@
 ![MIPS](https://img.shields.io/badge/MIPS-000000?style=for-the-badge&logo=gnu&logoColor=white)
 ![OCaml](https://img.shields.io/badge/OCaml-3be133?style=for-the-badge&logo=ocaml&logoColor=white)
 
-### 🛠 Tools & Frameworks
+### Tools & Frameworks
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
