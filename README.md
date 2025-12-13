@@ -38,3 +38,13 @@
 [![Hyprland](https://img.shields.io/badge/Hyprland-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hyprwm/Hyprland)
 [![Illogical-Impulse](https://img.shields.io/badge/Illogical--Impulse-FF6600?style=for-the-badge&logo=github&logoColor=white)](https://github.com/end-4/dots-hyprland)
 
+## Fun Facts / Hobbies
+- 🔪 Balisong flipping  
+- 🎮 Video games  
+- 🎹 Piano  
+- 🏊 Swimming
+- 🎵 [Hans Zimmer](https://open.spotify.com/artist/0YC192cP3KPCRWx8zr8MfZv) & [Matt Maltese](https://open.spotify.com/artist/12j6dJrPXanCBwY599pZxf) fan
+
+
+
+
