@@ -39,9 +39,9 @@
 [![Illogical-Impulse](https://img.shields.io/badge/Illogical--Impulse-FF6600?style=for-the-badge&logo=github&logoColor=white)](https://github.com/end-4/dots-hyprland)
 
 ## Fun Facts / Hobbies
+- 🎹 Piano  
 - 🔪 Balisong flipping  
 - 🎮 Video games  
-- 🎹 Piano  
 - 🏊 Swimming
 - 🥋 Former Black Belt in Seido Karate
 - 🎵 [Hans Zimmer](https://open.spotify.com/artist/0YC192cP3KPCRWx8zr8MfZ) & [Matt Maltese](https://open.spotify.com/artist/12j6dJrPXanCBwY599pZxf) fan
