@@ -33,13 +33,13 @@
 [![Unreal Engine](https://img.shields.io/badge/Unreal_Engine-0E1128?style=for-the-badge&logo=unreal-engine&logoColor=white)](https://www.unrealengine.com)
 [![Blender](https://img.shields.io/badge/Blender-F5792A?style=for-the-badge&logo=blender&logoColor=white)](https://www.blender.org/)
 
-## My System / Environment
+## My System/Environment
 [![Gentoo](https://img.shields.io/badge/Gentoo-54478C?style=for-the-badge&logo=gentoo&logoColor=white)](https://www.gentoo.org/)
 [![Hyprland](https://img.shields.io/badge/Hyprland-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hyprwm/Hyprland)
 [![Illogical-Impulse](https://img.shields.io/badge/Illogical--Impulse-FF6600?style=for-the-badge&logo=github&logoColor=white)](https://github.com/end-4/dots-hyprland)
 [![Neovim](https://img.shields.io/badge/Neovim-4B4B4B?style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io/)
 
-## Fun Facts / Hobbies
+## Fun Facts & Hobbies
 - 🎹 Piano  
 - 🔪 Balisong flipping  
 - 🎮 Video games  
