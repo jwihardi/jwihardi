@@ -44,7 +44,7 @@
 - 🔪 Balisong flipping  
 - 🎮 Video games  
 - 🏊 Swimming
-- 🥋 Former Black Belt in Seido Karate
+- 🥋 Former Black Belt in [Seido Karate](https://www.seido.com/)
 - 🎵 [Hans Zimmer](https://open.spotify.com/artist/0YC192cP3KPCRWx8zr8MfZ) & [Matt Maltese](https://open.spotify.com/artist/12j6dJrPXanCBwY599pZxf) fan
 
 
