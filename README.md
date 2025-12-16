@@ -41,7 +41,7 @@
 
 ## Fun Facts & Hobbies
 - 🎹 Piano  
-- 🔪 Balisong flipping  
+- 🔪 Balisong flipping (Balisongs: [OG Cynus](https://ldybalisong.net/pages/cygnus-measurements), [Tanto Krake Raken](https://squidindustriesknives.co/products/tanto-krake-raken), [Prodigy Mod C](https://www.homdesign.com/pages/prodigy-trainer)) 
 - 🎮 Video games (Top: Valorant, Hypixel Skyblock, Destiny 2)
 - 🏊 Swimming
 - 🥋 Former Black Belt in [Seido Karate](https://www.seido.com/)
