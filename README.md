@@ -41,11 +41,11 @@
 
 ## Fun Facts & Hobbies
 - 🎹 Piano  
-- 🔪 Balisong flipping (Own: [OG Cynus](https://ldybalisong.net/pages/cygnus-measurements), [Tanto Krake Raken](https://squidindustriesknives.co/products/tanto-krake-raken), [Prodigy Mod C](https://www.homdesign.com/pages/prodigy-trainer)) 
-- 🎮 Video games (Top: Valorant, Hypixel Skyblock, Destiny 2)
+- 🔪 Balisong Flipping (Own: [OG Cynus](https://ldybalisong.net/pages/cygnus-measurements), [Tanto Krake Raken](https://squidindustriesknives.co/products/tanto-krake-raken), [Prodigy Mod C](https://www.homdesign.com/pages/prodigy-trainer)) 
+- 🎮 Video Games (Top: Valorant, Hypixel Skyblock, Destiny 2)
 - 🏊 Swimming
 - 🥋 Former Black Belt in [Seido Karate](https://www.seido.com/)
-- 🎵 [Hans Zimmer](https://open.spotify.com/artist/0YC192cP3KPCRWx8zr8MfZ) & [Matt Maltese](https://open.spotify.com/artist/12j6dJrPXanCBwY599pZxf) fan
+- 🎵 [Hans Zimmer](https://open.spotify.com/artist/0YC192cP3KPCRWx8zr8MfZ) & [Matt Maltese](https://open.spotify.com/artist/12j6dJrPXanCBwY599pZxf) Fan
 
 
 
