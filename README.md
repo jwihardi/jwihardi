@@ -14,11 +14,11 @@
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
 ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
-[![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)](https://www.java.com)
+[![Java](https://img.shields.io/badge/Java-dc6f00?style=for-the-badge&logo=java&logoColor=white)](https://www.java.com)
 [![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)](https://rust-lang.org/)
 [![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)](https://www.gnu.org/software/bash/)
 [![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)](https://dotnet.microsoft.com/en-us/languages/csharp)
-[![OCaml](https://img.shields.io/badge/OCaml-3be133?style=for-the-badge&logo=ocaml&logoColor=white)](https://ocaml.org/)
+[![OCaml](https://img.shields.io/badge/OCaml-2e7d32?style=for-the-badge&logo=ocaml&logoColor=white)](https://ocaml.org/)
 ![MIPS](https://img.shields.io/badge/MIPS-000000?style=for-the-badge&logo=microchip&logoColor=white)
 
 ## Tools & Frameworks
