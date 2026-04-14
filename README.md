@@ -8,7 +8,7 @@
   </a>
 </div>
 
-[![GitHub jwihardi](https://img.shields.io/github/followers/jwihardi?label=Follow&style=social)](https://github.com/jwihardi)
+[![GitHub jwihardi](https://img.shields.io/github/followers/jwihardi?label=Follow&style=social&cacheSeconds=300)](https://github.com/jwihardi)
 
 ## Languages
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
