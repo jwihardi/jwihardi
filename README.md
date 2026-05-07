@@ -29,7 +29,6 @@
 [![Docker](https://img.shields.io/badge/Docker-000000?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![CMake](https://img.shields.io/badge/CMake-000000?style=for-the-badge&logo=cmake&logoColor=white)](https://cmake.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-000000?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-000000?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![NumPy](https://img.shields.io/badge/NumPy-000000?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/)
 [![scikit--learn](https://img.shields.io/badge/scikit--learn-000000?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
