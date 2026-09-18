@@ -46,7 +46,6 @@
 [![Gentoo](https://img.shields.io/badge/Gentoo-000000?style=for-the-badge&logo=gentoo&logoColor=white)](https://www.gentoo.org/)
 [![OpenRC](https://img.shields.io/badge/OpenRC-000000?style=for-the-badge&logo=linux&logoColor=white)](https://github.com/OpenRC/openrc)
 [![Hyprland](https://img.shields.io/badge/Hyprland-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hyprwm/Hyprland)
-[![Illogical-Impulse](https://img.shields.io/badge/Illogical--Impulse-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/end-4/dots-hyprland)
 [![Neovim](https://img.shields.io/badge/Neovim-000000?style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io/)
 [![fish](https://img.shields.io/badge/fish-000000?style=for-the-badge&logo=fish-shell&logoColor=white)](https://fishshell.com/)
 [![kitty](https://img.shields.io/badge/kitty-000000?style=for-the-badge&logo=kitty&logoColor=white)](https://sw.kovidgoyal.net/kitty/)
