@@ -12,7 +12,6 @@
 ![Assembly](https://img.shields.io/badge/Assembly-000000?style=for-the-badge&logo=microchip&logoColor=white)
 
 ## Tools & Frameworks
-[![PyTorch](https://img.shields.io/badge/PyTorch-000000?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![CUDA](https://img.shields.io/badge/CUDA-000000?style=for-the-badge&logo=nvidia&logoColor=white)](https://developer.nvidia.com/cuda-zone)
 [![MPI](https://img.shields.io/badge/MPI-000000?style=for-the-badge&logo=openmpi&logoColor=white)](https://www.open-mpi.org/)
 [![Docker](https://img.shields.io/badge/Docker-000000?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
