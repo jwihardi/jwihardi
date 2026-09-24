@@ -1,15 +1,3 @@
-<div align="center">
-  <h2>Listening To</h2>
-  <a href="https://allarkvarkk.pythonanywhere.com/">
-    <img
-      src="https://allarkvarkk.pythonanywhere.com/?spin=false&theme=dark&eq_color=rainbow"
-      alt="Current Spotify Song"
-    />
-  </a>
-</div>
-
-[![GitHub jwihardi](https://img.shields.io/github/followers/jwihardi?label=Follow&style=social&cacheSeconds=300)](https://github.com/jwihardi)
-
 ## Languages
 [![C++](https://img.shields.io/badge/C%2B%2B-000000?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
 [![Python](https://img.shields.io/badge/Python-000000?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
