@@ -42,4 +42,4 @@
 - 🎮 Video Games (Top: Valorant, Hypixel Skyblock, Destiny 2)
 - 🏊 Swimming
 - 🔪 Balisong Flipping (Own: [OG Cygnus](https://ldybalisong.net/pages/cygnus-measurements), [Tanto Krake Raken](https://squidindustriesknives.co/products/tanto-krake-raken), [Prodigy Mod C](https://www.homdesign.com/pages/prodigy-trainer))
-- 🎵 [Hans Zimmer](https://open.spotify.com/artist/0YC192cP3KPCRWx8zr8MfZ) & [Matt Maltese](https://open.spotify.com/artist/12j6dJrPXanCBwY599pZxf) Fan
+- 🎵 [Joji](https://open.spotify.com/artist/3MZsBdqDrRTJihTHQrO6Dq?si=IpHC3wzfQsekzSg1oiv9ow), [Hans Zimmer](https://open.spotify.com/artist/0YC192cP3KPCRWx8zr8MfZ), [Matt Maltese](https://open.spotify.com/artist/12j6dJrPXanCBwY599pZxf)
