@@ -15,8 +15,7 @@
 ### Tools & Frameworks
 
 ![CUDA](https://img.shields.io/badge/CUDA-18181B?style=for-the-badge&logo=nvidia&logoColor=76B900)
-![MPI](https://img.shields.io/badge/MPI-18181B?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODNiN2RjIiBzdHJva2Utd2lkdGg9IjIiIGQ9Ik0xMiA4djRNNCAxNnYtNGgxNnY0Ii8%2BPHBhdGggZmlsbD0iIzgzYjdkYyIgZD0iTTggMGg4djhIOHpNMCAxNmg4djhIMHpNMTYgMTZoOHY4aC04eiIvPjwvc3ZnPg%3D%3D)
-![Docker](https://img.shields.io/badge/Docker-18181B?style=for-the-badge&logo=docker&logoColor=2496ED)
+![MPI](https://img.shields.io/badge/MPI-18181B?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjODNiN2RjIiBkPSJNOCAwaDh2OGgtM3YzaDh2NWgzdjhoLTh2LThoM3YtM0g1djNoM3Y4SDB2LThoM3YtNWg4VjhIOHoiLz48L3N2Zz4%3D&v=3)![Docker](https://img.shields.io/badge/Docker-18181B?style=for-the-badge&logo=docker&logoColor=2496ED)
 ![Git](https://img.shields.io/badge/Git-18181B?style=for-the-badge&logo=git&logoColor=F05032)
 ![CMake](https://img.shields.io/badge/CMake-18181B?style=for-the-badge&logo=cmake&logoColor=64B5F6)
 ![Next.js](https://img.shields.io/badge/Next.js-18181B?style=for-the-badge&logo=nextdotjs&logoColor=white)
