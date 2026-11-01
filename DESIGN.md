@@ -13,3 +13,8 @@ layouts use these same sources through `scripts/render.py`.
 DejaVu Sans Mono, Consolas, monospace maintain the terminal grid. Desktop is
 900 × 406; below 600 px the picture selects a 420 × 770 stacked panel. Meaningful
 alt text and SVG descriptions accompany real Markdown project links.
+
+The terminal heading is `jacub@genpoo`. Three artwork options share the same right
+column, red palette and responsive geometry. Alternatives are a quantized wireframe
+signal landscape and a 32-lane GPU execution schematic; neither represents real
+benchmark data. Preview assets live under `assets/variants/`.

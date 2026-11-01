@@ -16,3 +16,11 @@ neurons. Both themes share the same geometry.
 Statistics and their scheduled refresh workflow have been removed.
 The Neural networks link still leads to the existing neural-network repository;
 ii-gentoo links to the verified Gentoo overlay. StriZ remains plain text.
+
+## Artwork alternatives
+
+The generator also writes all three options to `assets/variants/`, in desktop and
+mobile sizes for both themes. `network-*` retains the current neural network;
+`compression-*` uses a signal landscape; `warp-*` uses a schematic GPU warp trace.
+The new artwork functions live in `scripts/artwork.py`. These are illustrations,
+not measurements. The main README keeps the neural network while comparing options.
