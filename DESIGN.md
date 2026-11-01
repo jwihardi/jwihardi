@@ -34,3 +34,6 @@ on their own line so values remain readable. Music stays below the hobbies.
 
 Previous lists user-provided Leidos SWE and AWS SDE internships. Python and
 Hypixel Skyblock are omitted; software hobbies read roblox dev / sys work.
+
+The warp artwork has no title or bottom explanatory caption. Its issue/diverge/join
+labels and lane markers remain. Accessibility descriptions still explain the image.

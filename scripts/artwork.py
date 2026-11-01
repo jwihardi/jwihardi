@@ -51,7 +51,7 @@ def compression_artwork():
 
 def warp_artwork():
     """Stylized SIMT activity; lane spacing is illustrative, not a measured trace."""
-    out = ['<text x="0" y="0" class="accent" font-size="15">GPU warp trace</text>']
+    out = []
     for x, label in [(12, 'issue'), (126, 'diverge'), (277, 'join')]:
         out.append(f'<text x="{x}" y="32" class="muted" font-size="12">{label}</text>')
     # Quiet time ruler and lane-group markers give the flowing traces a fixed grid.
@@ -85,5 +85,4 @@ def warp_artwork():
         y = 68 + group*65
         out.append(f'<text x="113" y="{y-5}" class="muted" font-size="10">{label}</text>')
     out.append('<path d="M12 317h336m-5 -3 5 3-5 3" fill="none" stroke="var(--guide)"/>')
-    out.append('<text x="0" y="340" class="muted" font-size="13">32 lanes · SIMT schematic</text>')
     return ''.join(out)
