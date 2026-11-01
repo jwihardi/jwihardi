@@ -17,7 +17,7 @@ class GeneratorTests(unittest.TestCase):
                 ET.fromstring(svg)
                 self.assertNotIn('public repos', svg)
                 self.assertNotIn('EMNIST', svg)
-                self.assertIn('Gentoo Linux / OpenRC', svg)
+                self.assertIn('Gentoo Linux / Windows', svg)
 
     def test_themes_share_content_and_layout(self):
         data = json.loads((render.ROOT / 'profile/content.json').read_text())

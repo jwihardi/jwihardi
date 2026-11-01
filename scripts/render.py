@@ -19,11 +19,12 @@ def line(x, y, xx, yy, color='guide', width=1):
 def render(data, theme, mobile=False, variant="network"):
     descriptions = {"network": "A densely connected multilayer neural network.", "compression": "A wireframe signal landscape transitioning into quantized terraces.", "warp": "A schematic GPU warp trace with 32 lanes, branching execution and reconvergence."}
     drawings = {"network": lambda: artwork(json.loads((ROOT / "profile/network.json").read_text())), "compression": compression_artwork, "warp": warp_artwork}
-    w, h = (420, 770) if mobile else (900, 406)
+    extra_rows = sum(len(group["rows"]) for group in data["groups"]) - 10
+    w, h = (420, 770 + extra_rows * 22) if mobile else (900, 406 + extra_rows * 22)
     colors = data['themes'][theme]
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="title desc">',
-           '<title id="title">GPU computing, Linux and neural networks</title>',
-           f'<desc id="desc">{descriptions[variant]} Workstation, compute tools and projects.</desc>',
+           '<title id="title">GPU computing, Linux, Windows and game development</title>',
+           f'<desc id="desc">{descriptions[variant]} Workstation, programming languages, compute tools and game development.</desc>',
            '<style>:root{' + ';'.join(f'--{k}:{v}' for k, v in colors.items()) + '}text{font-family:"DejaVu Sans Mono",Consolas,monospace;white-space:pre}' + ''.join(f'.{k}{{fill:var(--{k})}}' for k in colors) + '</style>',
            f'<path fill="var(--bg)" d="M0 0h{w}v{h}H0z"/>']
     ax, ay = (28, 40)
@@ -47,7 +48,7 @@ def render(data, theme, mobile=False, variant="network"):
 
 
 def readme(data):
-    alt = 'Terminal profile: a densely connected multilayer neural network with fine red connections. Gentoo Linux and OpenRC; C++, C, Python and CUDA; GPU compression, neural-network benchmarking and Gentoo packaging.'
+    alt = 'Terminal profile: a densely connected multilayer neural network with fine red connections. Gentoo Linux and Windows; C++, C, Rust, Assembly, Python, Bash and CUDA; game development with Unreal, Unity, Godot and C#.'
     return f'''<picture>
   <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/profile-mobile-dark.svg">
   <source media="(max-width: 600px)" srcset="assets/profile-mobile-light.svg">

@@ -6,11 +6,11 @@
       "rows": [
         [
           "os",
-          "Gentoo Linux / OpenRC"
+          "Gentoo Linux / Windows"
         ],
         [
-          "desktop",
-          "Hyprland"
+          "linux",
+          "OpenRC / Hyprland"
         ],
         [
           "terminal",
@@ -22,8 +22,12 @@
       "title": "Compute",
       "rows": [
         [
-          "languages",
-          "C++ / C / Python"
+          "systems",
+          "C++ / C / Rust / Assembly"
+        ],
+        [
+          "scripting",
+          "Python / Bash"
         ],
         [
           "gpu",
@@ -40,19 +44,19 @@
       ]
     },
     {
-      "title": "Work",
+      "title": "Game dev",
       "rows": [
         [
-          "StriZ",
-          "error-bounded GPU compression"
+          "engines",
+          "Unreal / Unity / Godot"
         ],
         [
-          "networks",
-          "neural-network benchmarking"
+          "languages",
+          "C++ / C#"
         ],
         [
-          "ii-gentoo",
-          "Gentoo packaging"
+          "tools",
+          "Blender / Roblox Studio"
         ]
       ]
     }
