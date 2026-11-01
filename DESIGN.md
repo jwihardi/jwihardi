@@ -21,3 +21,8 @@ profile/content.json.
 User-requested personal rows include hobbies, favorite games and music. Null rows
 in profile/content.json encode exactly one blank line between related groups.
 Commit messages should use at most four words.
+
+The desktop artwork is enlarged to 1.12×; the text column begins at x=430.
+Values align to the right edge, with dotted leaders and a minimum 106-unit
+label column. Slash-separated names stay together when wrapping. Mobile artwork
+is 1.05× and retains the stacked layout.

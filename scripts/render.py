@@ -21,10 +21,11 @@ def render(data, theme, mobile=False, variant="network"):
     descriptions = {"network": "A densely connected multilayer neural network.", "compression": "A wireframe signal landscape transitioning into quantized terraces.", "warp": "A schematic GPU warp trace with 32 lanes, branching execution and reconvergence."}
     drawings = {"network": lambda: artwork(json.loads((ROOT / "profile/network.json").read_text())), "compression": compression_artwork, "warp": warp_artwork}
     w = 420 if mobile else 900
-    x, top = (18, 370) if mobile else (368, 28)
+    x, top = (18, 410) if mobile else (430, 28)
     size, leading = 16, 22
     char_width = size * 0.6
-    value_x = x + (112 if mobile else 134)
+    value_x = x + 106
+    value_end = w - 18
     value_columns = int((w - 18 - value_x) / char_width)
     rows = []
     for row in data['rows']:
@@ -32,7 +33,17 @@ def render(data, theme, mobile=False, variant="network"):
             rows.append(None)
         else:
             label, value = row
-            wrapped = textwrap.wrap(value, width=value_columns, break_long_words=False, break_on_hyphens=False)
+            wrapped = []
+            current = ''
+            for item in value.split(' / '):
+                candidate = f'{current} / {item}' if current else item
+                if current and len(candidate) > value_columns:
+                    wrapped.append(current)
+                    current = item
+                else:
+                    current = candidate
+            if current:
+                wrapped.extend(textwrap.wrap(current, width=value_columns, break_long_words=False, break_on_hyphens=False))
             rows.extend((label if i == 0 else '', part) for i, part in enumerate(wrapped))
     h = top + 28 + len(rows) * leading + 16
     colors = data['themes'][theme]
@@ -42,7 +53,7 @@ def render(data, theme, mobile=False, variant="network"):
            '<style>:root{' + ';'.join(f'--{k}:{v}' for k, v in colors.items()) + '}text{font-family:Consolas,"Liberation Mono",Menlo,monospace;white-space:pre}' + ''.join(f'.{k}{{fill:var(--{k})}}' for k in colors) + '</style>',
            f'<rect width="{w}" height="{h}" rx="12" fill="var(--bg)"/>']
     ax, ay = (18, 28)
-    scale = 0.95
+    scale = 1.05 if mobile else 1.12
     out.append(f'<g transform="translate({ax} {ay}) scale({scale})">{drawings[variant]()}</g>')
     columns = int((w - 18 - x) / char_width)
     out.append(text(x, top, data['heading'] + ' ' + '-' * (columns - len(data['heading']) - 1), 'fg', size))
@@ -54,9 +65,10 @@ def render(data, theme, mobile=False, variant="network"):
                 label = {'os': 'OS', 'gpu': 'GPU', 'ide': 'IDE'}.get(label, label.capitalize()) + ':'
                 out.append(text(x, y, label, 'accent', size))
                 dot_x = x + (len(label) + 1) * char_width
-                count = max(0, int((value_x - dot_x) / char_width) - 1)
+                value_start = value_end - len(value) * char_width
+                count = max(0, int((value_start - dot_x) / char_width) - 1)
                 out.append(text(dot_x, y, '.' * count, 'muted', size))
-            out.append(text(value_x, y, value, 'value', size))
+            out.append(text(value_end, y, value, 'value', size, 'text-anchor="end"'))
         y += leading
     out.append('</svg>\n')
     return ''.join(out)
