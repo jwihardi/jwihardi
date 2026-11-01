@@ -16,14 +16,16 @@
       "fg": "#c9d1d9",
       "muted": "#8b949e",
       "guide": "#484f58",
-      "accent": "#ed8b91"
+      "accent": "#ed8b91",
+      "value": "#e8cf82"
     },
     "light": {
       "bg": "#f6f8fa",
       "fg": "#24292f",
       "muted": "#57606a",
       "guide": "#afb8c1",
-      "accent": "#a83543"
+      "accent": "#a83543",
+      "value": "#806000"
     }
   },
   "rows": [
@@ -44,9 +46,10 @@
       "kitty"
     ],
     [
-      "editor",
-      "Neovim"
+      "ide",
+      "Neovim / VS Code"
     ],
+    null,
     [
       "languages",
       "C++ / C / Java / Python"
@@ -67,13 +70,27 @@
       "debug",
       "perf / GDB"
     ],
+    null,
     [
       "engines",
-      "Unreal / Unity / Godot"
+      "Unreal / Unity / Godot / Roblox"
     ],
     [
       "tools",
       "Blender / Roblox Studio"
+    ],
+    null,
+    [
+      "hobbies",
+      "Video games / Balisong flipping / Piano"
+    ],
+    [
+      "games",
+      "Valorant / Destiny 2 / Hypixel Skyblock"
+    ],
+    [
+      "music",
+      "Joji / Hans Zimmer / Matt Maltese"
     ]
   ],
   "artwork": "warp"

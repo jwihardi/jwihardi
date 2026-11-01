@@ -28,3 +28,6 @@ not measurements. The main README uses the variant selected by `artwork` in `pro
 
 The shared panel now uses code-block typography and dotted leaders. The warp option
 uses the flowing vector trace: edit `warp_artwork()` in `scripts/artwork.py`. The embedded SVG is an image, not selectable README text.
+
+Use `null` between row groups for one blank line. Values use the theme `value`
+color; labels use `accent`. Long values wrap automatically on narrow layouts.

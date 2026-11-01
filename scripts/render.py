@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Dependency-free profile generator. Render both themes and sizes from shared content and artwork."""
 import json
+import textwrap
 from pathlib import Path
 from html import escape
 from artwork import artwork, compression_artwork, warp_artwork
@@ -19,39 +20,52 @@ def line(x, y, xx, yy, color='guide', width=1):
 def render(data, theme, mobile=False, variant="network"):
     descriptions = {"network": "A densely connected multilayer neural network.", "compression": "A wireframe signal landscape transitioning into quantized terraces.", "warp": "A schematic GPU warp trace with 32 lanes, branching execution and reconvergence."}
     drawings = {"network": lambda: artwork(json.loads((ROOT / "profile/network.json").read_text())), "compression": compression_artwork, "warp": warp_artwork}
-    extra_rows = max(0, len(data["rows"]) - 12)
-    w, h = (420, 630 + extra_rows * 20) if mobile else (900, 330 + extra_rows * 20)
+    w = 420 if mobile else 900
+    x, top = (18, 370) if mobile else (368, 28)
+    size, leading = 16, 22
+    char_width = size * 0.6
+    value_x = x + (112 if mobile else 134)
+    value_columns = int((w - 18 - value_x) / char_width)
+    rows = []
+    for row in data['rows']:
+        if row is None:
+            rows.append(None)
+        else:
+            label, value = row
+            wrapped = textwrap.wrap(value, width=value_columns, break_long_words=False, break_on_hyphens=False)
+            rows.extend((label if i == 0 else '', part) for i, part in enumerate(wrapped))
+    h = top + 28 + len(rows) * leading + 16
     colors = data['themes'][theme]
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="title desc">',
            '<title id="title">GPU computing, Linux, Windows and game development</title>',
-           f'<desc id="desc">{descriptions[variant]} Workstation, programming languages, compute tools and game development.</desc>',
+           f'<desc id="desc">{descriptions[variant]} Workstation, programming languages, compute tools, game development, hobbies, favorite games and music.</desc>',
            '<style>:root{' + ';'.join(f'--{k}:{v}' for k, v in colors.items()) + '}text{font-family:Consolas,"Liberation Mono",Menlo,monospace;white-space:pre}' + ''.join(f'.{k}{{fill:var(--{k})}}' for k in colors) + '</style>',
            f'<rect width="{w}" height="{h}" rx="12" fill="var(--bg)"/>']
     ax, ay = (18, 28)
-    scale = 0.8
+    scale = 0.95
     out.append(f'<g transform="translate({ax} {ay}) scale({scale})">{drawings[variant]()}</g>')
-    x, top = (18, 340) if mobile else (368, 28)
-    size = 14
-    char_width = size * 0.6
     columns = int((w - 18 - x) / char_width)
     out.append(text(x, top, data['heading'] + ' ' + '-' * (columns - len(data['heading']) - 1), 'fg', size))
-    y = top + 26
-    value_x = x + (112 if mobile else 134)
-    for label, value in data['rows']:
-        label = {'os': 'OS', 'gpu': 'GPU'}.get(label, label.capitalize()) + ':'
-        out.append(text(x, y, label, 'accent', size))
-        dot_x = x + (len(label) + 1) * char_width
-        count = max(0, int((value_x - dot_x) / char_width) - 1)
-        out.append(text(dot_x, y, '.' * count, 'muted', size))
-        out.append(text(value_x, y, value, 'fg', size))
-        y += 20
+    y = top + 28
+    for row in rows:
+        if row is not None:
+            label, value = row
+            if label:
+                label = {'os': 'OS', 'gpu': 'GPU', 'ide': 'IDE'}.get(label, label.capitalize()) + ':'
+                out.append(text(x, y, label, 'accent', size))
+                dot_x = x + (len(label) + 1) * char_width
+                count = max(0, int((value_x - dot_x) / char_width) - 1)
+                out.append(text(dot_x, y, '.' * count, 'muted', size))
+            out.append(text(value_x, y, value, 'value', size))
+        y += leading
     out.append('</svg>\n')
     return ''.join(out)
 
 
 def readme(data):
     descriptions = {'network': 'a densely connected neural network', 'compression': 'a wireframe compression landscape', 'warp': 'a flowing GPU warp trace with 32 lanes'}
-    alt = f"Terminal profile: {descriptions[data.get('artwork', 'network')]}. Gentoo Linux and Windows; C++, C, Java, Python, Assembly, Bash and CUDA; game development with Unreal, Unity and Godot."
+    details = '; '.join(f'{row[0]}: {row[1]}' for row in data['rows'] if row)
+    alt = escape(f"Terminal profile: {descriptions[data.get('artwork', 'network')]}. {details}.", quote=True)
     return f'''<picture>
   <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/profile-mobile-dark.svg">
   <source media="(max-width: 600px)" srcset="assets/profile-mobile-light.svg">
