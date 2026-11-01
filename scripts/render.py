@@ -22,7 +22,8 @@ def render(data, theme, mobile=False, variant="network"):
     descriptions = {"network": "A densely connected multilayer neural network.", "compression": "A wireframe signal landscape transitioning into quantized terraces.", "warp": "A schematic GPU warp trace with 32 lanes, branching execution and reconvergence."}
     drawings = {"network": lambda: artwork(json.loads((ROOT / "profile/network.json").read_text())), "compression": compression_artwork, "warp": warp_artwork}
     w = 420 if mobile else 900
-    x, top = (18, 410) if mobile else (430, 28)
+    stats = data.get('stats')
+    x, top = (18, 500 if stats else 410) if mobile else (430, 28)
     size, leading = 15, 20
     char_width = size * 0.6
     label_x = x + 2 * char_width
@@ -62,6 +63,17 @@ def render(data, theme, mobile=False, variant="network"):
     ax, ay = (18, 28)
     scale = 1.05 if mobile else 1.12
     out.append(f'<g transform="translate({ax} {ay}) scale({scale})">{drawings[variant]()}</g>')
+    if stats:
+        sx, sy = 18, 394 if mobile else 418
+        end = 400
+        out.append(text(sx, sy, '- GitHub ' + '─' * 33, 'fg', 15))
+        for i, (label, key) in enumerate([('Public repos', 'repos'), ('Stars', 'stars')]):
+            y = sy + 24 + i * 20
+            out.append(text(sx, y, '. ' + label + ':', 'accent', 15))
+            dot_x = sx + (len(label) + 4) * 9
+            count = max(0, int((end - len(str(stats[key])) * 9 - dot_x) / 9) - 1)
+            out.append(text(dot_x, y, '.' * count, 'muted', 15))
+            out.append(text(end, y, str(stats[key]), 'value', 15, 'text-anchor="end"'))
     columns = int((w - 18 - x) / char_width)
     out.append(text(x, top, data['heading'] + ' ' + '─' * (columns - len(data['heading']) - 1), 'fg', size))
     y = top + 28
@@ -90,6 +102,8 @@ def render(data, theme, mobile=False, variant="network"):
 def readme(data, revision):
     descriptions = {'network': 'a densely connected neural network', 'compression': 'a wireframe compression landscape', 'warp': 'a flowing GPU warp trace with 32 lanes'}
     details = '; '.join((row['section'] if isinstance(row, dict) else f'{row[0]}: {row[1]}') for row in data['rows'] if row)
+    if data.get('stats'):
+        details += f"; public owned non-fork repos: {data['stats']['repos']}; stars received: {data['stats']['stars']}"
     alt = escape(f"Terminal profile: {descriptions[data.get('artwork', 'network')]}. {details}.", quote=True)
     return f'''<picture>
   <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jwihardi/jwihardi/main/assets/rendered/profile-mobile-dark-{revision}.svg">
@@ -103,6 +117,9 @@ def readme(data, revision):
 
 def main():
     data = json.loads((ROOT / 'profile/content.json').read_text())
+    cache = ROOT / 'profile/stats.json'
+    if cache.exists():
+        data['stats'] = json.loads(cache.read_text())
     outputs = {}
     for theme in data['themes']:
         for mobile in (False, True):

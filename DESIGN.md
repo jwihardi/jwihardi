@@ -3,7 +3,7 @@
 A GitHub-code-block appearance: rounded charcoal/light-gray surface, 15-unit monospace type, 20-unit line spacing, dotted leaders, red labels and
 yellow values (darker ochre in light mode for contrast). The
 terminal heading is `jacub@genpoo`. Related rows are separated by one single-dot spacer line. A Previous heading
-uses a horizontal text rule; the terminal heading uses the same rule. No statistics.
+uses a horizontal text rule; the terminal heading uses the same rule. A small public-repo/star stats block sits beneath the artwork.
 
 `profile/content.json` owns all content and palette tokens. `scripts/render.py`
 owns the shared layout; desktop width is 900 and mobile width is 420. Height follows content and
@@ -37,3 +37,6 @@ Hypixel Skyblock are omitted; software hobbies read roblox dev / sys work.
 
 The warp artwork has no title or bottom explanatory caption. Its issue/diverge/join
 labels and lane markers remain. Accessibility descriptions still explain the image.
+
+Public stats use the last successful API snapshot in profile/stats.json.
+No commit or line-change totals are shown until their scope and access are settled.
