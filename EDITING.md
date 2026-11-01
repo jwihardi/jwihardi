@@ -26,5 +26,4 @@ The new artwork functions live in `scripts/artwork.py`. These are illustrations,
 not measurements. The main README keeps the neural network while comparing options.
 
 The shared panel now uses code-block typography and dotted leaders. The warp option
-is character-based: edit `warp_artwork()` in `scripts/artwork.py`. Each displayed
-row represents two lanes. The embedded SVG is an image, not selectable README text.
+uses the flowing vector trace: edit `warp_artwork()` in `scripts/artwork.py`. The embedded SVG is an image, not selectable README text.

@@ -50,25 +50,40 @@ def compression_artwork():
 
 
 def warp_artwork():
-    """ASCII SIMT illustration. Each displayed row represents two lanes."""
-    out = ['<text x="0" y="0" class="fg" font-size="14">warp / SIMT ----------------------------</text>',
-           '<text x="0" y="26" class="muted" font-size="13">      issue       execute       join</text>']
-    for pair in range(16):
-        group, lane = divmod(pair, 4)
-        cells = list('  :....:.....................:....:')
-        first = 4 + lane
-        middle = 12 + group*3 + lane
-        last = 29 + lane
-        for pos in [first, middle, last]:
-            cells[pos:pos+2] = ['#', '#']
-        # Slash marks outline staggered execution boundaries on a character grid.
-        if middle > 10:
-            cells[middle-2] = '/'
-        chars = f'{pair*2:02} ' + ''.join(cells)
-        pieces = []
-        for char in chars:
-            color = 'accent' if char == '#' else 'muted'
-            pieces.append(f'<tspan class="{color}">{escape(char)}</tspan>')
-        out.append(f'<text x="0" y="{49+pair*13}" font-size="13" xml:space="preserve">{"".join(pieces)}</text>')
-    out.append('<text x="0" y="273" class="muted" font-size="13">32 lanes / paired / schematic</text>')
+    """Stylized SIMT activity; lane spacing is illustrative, not a measured trace."""
+    out = ['<text x="0" y="0" class="accent" font-size="15">GPU warp trace</text>']
+    for x, label in [(12, 'issue'), (126, 'diverge'), (277, 'join')]:
+        out.append(f'<text x="{x}" y="32" class="muted" font-size="12">{label}</text>')
+    # Quiet time ruler and lane-group markers give the flowing traces a fixed grid.
+    for x in range(12, 349, 14):
+        tall = (x-12) % 56 == 0
+        out.append(f'<path d="M{x} 49v{5 if tall else 2}" stroke="var(--muted)" opacity="0.5"/>')
+    for group in range(4):
+        y = 68 + group*65
+        out.append(f'<path d="M113 {y}h139" stroke="var(--guide)" stroke-dasharray="2 5"/>')
+    # Four separated bundles fan out from a compact issue stream and reconverge.
+    for lane in range(32):
+        group, index = divmod(lane, 8)
+        start = 107 + lane*4.4
+        spread = 76 + group*65 + index*5.3
+        end = 105 + lane*4.5
+        bend = 68 + index*2
+        arrival = 110 + index*2
+        depart = 232 + (7-index)*2
+        points = f'12,{start:.1f} {bend},{start:.1f} {arrival},{spread:.1f} {depart},{spread:.1f} 290,{end:.1f} 348,{end:.1f}'
+        out.append(f'<polyline points="{points}" fill="none" stroke="var(--accent)" stroke-width="0.85" opacity="0.44"/>')
+        # Instruction packets follow each lane; their diagonal staggering adds rhythm.
+        packets = [(20+index*2, start, 9, .65),
+                   (132+group*12+index*3, spread, 15, .95),
+                   (193+index*2-group*5, spread, 7, .60),
+                   (306+index*2, end, 13, .85)]
+        for x,y,width,opacity in packets:
+            out.append(f'<path d="M{x} {y:.1f}h{width}" stroke="var(--accent)" stroke-width="2.8" opacity="{opacity}"/>')
+    # A visible reconvergence boundary, with open endpoints rather than a box.
+    out.append('<path d="M285 84h10 M290 84v180 M285 264h10" fill="none" stroke="var(--muted)" stroke-width="0.9" stroke-dasharray="2 3"/>')
+    for group, label in enumerate(['00–07', '08–15', '16–23', '24–31']):
+        y = 68 + group*65
+        out.append(f'<text x="113" y="{y-5}" class="muted" font-size="10">{label}</text>')
+    out.append('<path d="M12 317h336m-5 -3 5 3-5 3" fill="none" stroke="var(--guide)"/>')
+    out.append('<text x="0" y="340" class="muted" font-size="13">32 lanes · SIMT schematic</text>')
     return ''.join(out)

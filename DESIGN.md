@@ -8,9 +8,9 @@ terminal heading is `jacub@genpoo`. No section headings, biography or statistics
 owns the shared layout; desktop is 900 × 330 and mobile is 420 × 630, extended for
 additional rows. The font stack is Consolas, Liberation Mono, Menlo, monospace.
 
-Three artwork options remain in `assets/variants/`. The warp uses ASCII characters
-on a fixed grid (one row per pair of lanes), explicitly labeled schematic. The
-network and compression alternatives retain their original vector drawings. All
+Three artwork options remain in `assets/variants/`. The warp retains the flowing vector trace with four lane bundles, staggered
+instruction packets and a reconvergence boundary, explicitly labeled schematic.
+The network and compression alternatives retain their original vector drawings. All
 use the same text list and theme tokens. SVG title/description and meaningful
 README alt text provide context; real Markdown project links sit below the panel.
 
