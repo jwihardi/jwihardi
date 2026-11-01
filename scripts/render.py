@@ -50,7 +50,8 @@ def render(data, theme, mobile=False, variant="network"):
 
 
 def readme(data):
-    alt = 'Terminal profile: a densely connected multilayer neural network with fine red connections. Gentoo Linux and Windows; C++, C, Java, Python, Assembly, Bash and CUDA; game development with Unreal, Unity and Godot.'
+    descriptions = {'network': 'a densely connected neural network', 'compression': 'a wireframe compression landscape', 'warp': 'a flowing GPU warp trace with 32 lanes'}
+    alt = f"Terminal profile: {descriptions[data.get('artwork', 'network')]}. Gentoo Linux and Windows; C++, C, Java, Python, Assembly, Bash and CUDA; game development with Unreal, Unity and Godot."
     return f'''<picture>
   <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/profile-mobile-dark.svg">
   <source media="(max-width: 600px)" srcset="assets/profile-mobile-light.svg">
@@ -67,7 +68,7 @@ def main():
     for theme in data['themes']:
         for mobile in (False, True):
             name = f'profile-{"mobile-" if mobile else ""}{theme}.svg'
-            outputs[ROOT / 'assets' / name] = render(data, theme, mobile)
+            outputs[ROOT / 'assets' / name] = render(data, theme, mobile, data.get('artwork', 'network'))
     for variant in ('network', 'compression', 'warp'):
         for theme in data['themes']:
             for mobile in (False, True):

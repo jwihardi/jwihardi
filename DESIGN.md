@@ -15,5 +15,5 @@ use the same text list and theme tokens. SVG title/description and meaningful
 README alt text provide context; real Markdown project links sit below the panel.
 
 The SVG resembles terminal text but remains an embedded image, not a native
-copyable Markdown code fence. The main README retains the network alternative
-while the user compares artwork versions.
+copyable Markdown code fence. The main README uses the warp alternative, selected by the artwork field in
+profile/content.json.
