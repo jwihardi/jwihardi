@@ -83,10 +83,10 @@ def readme(data, revision):
     details = '; '.join(f'{row[0]}: {row[1]}' for row in data['rows'] if row)
     alt = escape(f"Terminal profile: {descriptions[data.get('artwork', 'network')]}. {details}.", quote=True)
     return f'''<picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jwihardi/jwihardi/main/assets/profile-mobile-dark.svg?v={revision}">
-  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/jwihardi/jwihardi/main/assets/profile-mobile-light.svg?v={revision}">
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jwihardi/jwihardi/main/assets/profile-dark.svg?v={revision}">
-  <img src="https://raw.githubusercontent.com/jwihardi/jwihardi/main/assets/profile-light.svg?v={revision}" width="900" alt="{alt}">
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jwihardi/jwihardi/main/assets/rendered/profile-mobile-dark-{revision}.svg">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/jwihardi/jwihardi/main/assets/rendered/profile-mobile-light-{revision}.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jwihardi/jwihardi/main/assets/rendered/profile-dark-{revision}.svg">
+  <img src="https://raw.githubusercontent.com/jwihardi/jwihardi/main/assets/rendered/profile-light-{revision}.svg" width="900" alt="{alt}">
 </picture>
 
 ''' + ' · '.join(f'[{label}]({url})' for label, url in data['links']) + '\n'
@@ -100,6 +100,8 @@ def main():
             name = f'profile-{"mobile-" if mobile else ""}{theme}.svg'
             outputs[ROOT / 'assets' / name] = render(data, theme, mobile, data.get('artwork', 'network'))
     revision = hashlib.sha256(''.join(outputs.values()).encode()).hexdigest()[:12]
+    for path, svg in list(outputs.items()):
+        outputs[ROOT / 'assets/rendered' / f'{path.stem}-{revision}.svg'] = svg
     outputs[ROOT / 'README.md'] = readme(data, revision)
     for variant in ('network', 'compression', 'warp'):
         for theme in data['themes']:
