@@ -20,25 +20,31 @@ def render(data, theme, mobile=False, variant="network"):
     descriptions = {"network": "A densely connected multilayer neural network.", "compression": "A wireframe signal landscape transitioning into quantized terraces.", "warp": "A schematic GPU warp trace with 32 lanes, branching execution and reconvergence."}
     drawings = {"network": lambda: artwork(json.loads((ROOT / "profile/network.json").read_text())), "compression": compression_artwork, "warp": warp_artwork}
     extra_rows = max(0, len(data["rows"]) - 12)
-    w, h = (420, 770 + extra_rows * 26) if mobile else (900, 406 + extra_rows * 26)
+    w, h = (420, 630 + extra_rows * 20) if mobile else (900, 330 + extra_rows * 20)
     colors = data['themes'][theme]
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="title desc">',
            '<title id="title">GPU computing, Linux, Windows and game development</title>',
            f'<desc id="desc">{descriptions[variant]} Workstation, programming languages, compute tools and game development.</desc>',
-           '<style>:root{' + ';'.join(f'--{k}:{v}' for k, v in colors.items()) + '}text{font-family:"DejaVu Sans Mono",Consolas,monospace;white-space:pre}' + ''.join(f'.{k}{{fill:var(--{k})}}' for k in colors) + '</style>',
-           f'<path fill="var(--bg)" d="M0 0h{w}v{h}H0z"/>']
-    ax, ay = (28, 40)
-    out.append(f'<g transform="translate({ax} {ay})">{drawings[variant]()}</g>')
-    x, top = (28, 400) if mobile else (404, 40)
-    out.append(text(x, top, data['heading'], 'fg', 20))
-    out.append(text(w - 40, top, '_', 'accent', 20))
-    out.append(line(x, top + 16, w - 28, top + 16))
-    y = top + 43
+           '<style>:root{' + ';'.join(f'--{k}:{v}' for k, v in colors.items()) + '}text{font-family:Consolas,"Liberation Mono",Menlo,monospace;white-space:pre}' + ''.join(f'.{k}{{fill:var(--{k})}}' for k in colors) + '</style>',
+           f'<rect width="{w}" height="{h}" rx="12" fill="var(--bg)"/>']
+    ax, ay = (18, 28)
+    scale = 1 if variant == "warp" else 0.8
+    out.append(f'<g transform="translate({ax} {ay}) scale({scale})">{drawings[variant]()}</g>')
+    x, top = (18, 340) if mobile else (368, 28)
+    size = 14
+    char_width = size * 0.6
+    columns = int((w - 18 - x) / char_width)
+    out.append(text(x, top, data['heading'] + ' ' + '-' * (columns - len(data['heading']) - 1), 'fg', size))
+    y = top + 26
+    value_x = x + (112 if mobile else 134)
     for label, value in data['rows']:
-        size = 14 if mobile else 16
+        label = {'os': 'OS', 'gpu': 'GPU'}.get(label, label.capitalize()) + ':'
         out.append(text(x, y, label, 'accent', size))
-        out.append(text(x + (99 if mobile else 110), y, value, 'fg', size))
-        y += 26
+        dot_x = x + (len(label) + 1) * char_width
+        count = max(0, int((value_x - dot_x) / char_width) - 1)
+        out.append(text(dot_x, y, '.' * count, 'muted', size))
+        out.append(text(value_x, y, value, 'fg', size))
+        y += 20
     out.append('</svg>\n')
     return ''.join(out)
 

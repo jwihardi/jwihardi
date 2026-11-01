@@ -12,17 +12,17 @@
   ],
   "themes": {
     "dark": {
-      "bg": "#0c141f",
-      "fg": "#e4edf3",
-      "muted": "#94a7b8",
-      "guide": "#293b4c",
+      "bg": "#161b22",
+      "fg": "#c9d1d9",
+      "muted": "#8b949e",
+      "guide": "#484f58",
       "accent": "#ed8b91"
     },
     "light": {
-      "bg": "#f5f8fa",
-      "fg": "#203446",
-      "muted": "#526979",
-      "guide": "#c4d1da",
+      "bg": "#f6f8fa",
+      "fg": "#24292f",
+      "muted": "#57606a",
+      "guide": "#afb8c1",
       "accent": "#a83543"
     }
   },

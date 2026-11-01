@@ -24,3 +24,7 @@ mobile sizes for both themes. `network-*` retains the current neural network;
 `compression-*` uses a signal landscape; `warp-*` uses a schematic GPU warp trace.
 The new artwork functions live in `scripts/artwork.py`. These are illustrations,
 not measurements. The main README keeps the neural network while comparing options.
+
+The shared panel now uses code-block typography and dotted leaders. The warp option
+is character-based: edit `warp_artwork()` in `scripts/artwork.py`. Each displayed
+row represents two lanes. The embedded SVG is an image, not selectable README text.

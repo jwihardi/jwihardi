@@ -1,30 +1,19 @@
 # Profile design
 
-A continuous terminal surface with a large, dense neural network on the left and
-a single aligned label/value list on the right. Seven layers and many fine
-connections form the main visual; muted red connections and outlined neurons create a uniform mesh.
-The network is abstract, not a claim about any project's architecture. No digit,
-EMNIST label, statistics, biography, badges, decorative cards, gradients or animation.
+A GitHub-code-block appearance: rounded charcoal/light-gray surface, small uniform
+monospace type, tight 20-unit line spacing, dotted leaders and red labels. The
+terminal heading is `jacub@genpoo`. No section headings, biography or statistics.
 
-`profile/content.json` owns text and theme tokens. `profile/network.json` owns the
-artwork dimensions and layer sizes; `scripts/artwork.py` draws it. Both themes and
-layouts use these same sources through `scripts/render.py`.
+`profile/content.json` owns all content and palette tokens. `scripts/render.py`
+owns the shared layout; desktop is 900 × 330 and mobile is 420 × 630, extended for
+additional rows. The font stack is Consolas, Liberation Mono, Menlo, monospace.
 
-DejaVu Sans Mono, Consolas, monospace maintain the terminal grid. Desktop is
-900 × 406; below 600 px the picture selects a 420 × 770 stacked panel. Meaningful
-alt text and SVG descriptions accompany real Markdown project links.
+Three artwork options remain in `assets/variants/`. The warp uses ASCII characters
+on a fixed grid (one row per pair of lanes), explicitly labeled schematic. The
+network and compression alternatives retain their original vector drawings. All
+use the same text list and theme tokens. SVG title/description and meaningful
+README alt text provide context; real Markdown project links sit below the panel.
 
-The terminal heading is `jacub@genpoo`. Three artwork options share the same right
-column, red palette and responsive geometry. Alternatives are a quantized wireframe
-signal landscape and a 32-lane GPU execution schematic; neither represents real
-benchmark data. Preview assets live under `assets/variants/`.
-
-The warp alternative uses a flowing trace composition: four lane bundles fan out
-from a compact issue stream, carry staggered instruction packets, and reconverge
-at a dashed join boundary. It stays static, red, and explicitly schematic.
-
-Shared content is a flat list without section headings: platforms, Linux tools,
-shell, terminal, editor, languages, GPU libraries, parallel tools, debugging,
-engines and creation tools. Java and Python appear alongside C++ and C; Rust and
-the separate game-development language row are omitted. All three artwork options
-share this content. Project links remain below the panel.
+The SVG resembles terminal text but remains an embedded image, not a native
+copyable Markdown code fence. The main README retains the network alternative
+while the user compares artwork versions.
