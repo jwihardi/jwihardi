@@ -24,26 +24,29 @@ def render(data, theme, mobile=False, variant="network"):
     x, top = (18, 410) if mobile else (430, 28)
     size, leading = 16, 22
     char_width = size * 0.6
-    value_x = x + 106
     value_end = w - 18
-    value_columns = int((w - 18 - value_x) / char_width)
     rows = []
     for row in data['rows']:
         if row is None:
             rows.append(None)
         else:
             label, value = row
+            if mobile and '.' in label:
+                rows.append((label, ''))
+                label = ''
+            label_width = max(106, (len(label) + 2) * char_width)
+            row_columns = int((value_end - x - label_width) / char_width)
             wrapped = []
             current = ''
             for item in value.split(' / '):
                 candidate = f'{current} / {item}' if current else item
-                if current and len(candidate) > value_columns:
+                if current and len(candidate) > row_columns:
                     wrapped.append(current)
                     current = item
                 else:
                     current = candidate
             if current:
-                wrapped.extend(textwrap.wrap(current, width=value_columns, break_long_words=False, break_on_hyphens=False))
+                wrapped.extend(textwrap.wrap(current, width=row_columns, break_long_words=False, break_on_hyphens=False))
             rows.extend((label if i == 0 else '', part) for i, part in enumerate(wrapped))
     h = top + 28 + len(rows) * leading + 16
     colors = data['themes'][theme]
@@ -62,11 +65,11 @@ def render(data, theme, mobile=False, variant="network"):
         if row is not None:
             label, value = row
             if label:
-                label = {'os': 'OS', 'gpu': 'GPU', 'ide': 'IDE'}.get(label, label.capitalize()) + ':'
+                label = {'os': 'OS', 'gpu': 'GPU', 'ide': 'IDE'}.get(label, '.'.join(part.capitalize() for part in label.split('.'))) + ':'
                 out.append(text(x, y, label, 'accent', size))
                 dot_x = x + (len(label) + 1) * char_width
                 value_start = value_end - len(value) * char_width
-                count = max(0, int((value_start - dot_x) / char_width) - 1)
+                count = max(0, int((value_start - dot_x) / char_width) - 1) if value else 0
                 out.append(text(dot_x, y, '.' * count, 'muted', size))
             out.append(text(value_end, y, value, 'value', size, 'text-anchor="end"'))
         y += leading

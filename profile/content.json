@@ -81,11 +81,15 @@
     ],
     null,
     [
-      "hobbies",
-      "Video games / Balisong flipping / Piano"
+      "hobbies.general",
+      "Balisong flipping / Piano"
     ],
     [
-      "games",
+      "hobbies.software",
+      "Roblox game development / Systems work"
+    ],
+    [
+      "hobbies.videogames",
       "Valorant / Destiny 2 / Hypixel Skyblock"
     ],
     [

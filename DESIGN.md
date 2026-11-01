@@ -26,3 +26,7 @@ The desktop artwork is enlarged to 1.12×; the text column begins at x=430.
 Values align to the right edge, with dotted leaders and a minimum 106-unit
 label column. Slash-separated names stay together when wrapping. Mobile artwork
 is 1.05× and retains the stacked layout.
+
+Hobbies use Hobbies.General, Hobbies.Software and Hobbies.Videogames labels.
+Desktop wrapping reserves room for each label; mobile places these long labels
+on their own line so values remain readable. Music stays below the hobbies.
