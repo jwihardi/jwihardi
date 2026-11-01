@@ -1,15 +1,86 @@
 {
-  "user": "jwihardi",
   "heading": "~/compute",
   "groups": [
-    {"title": "Workstation", "rows": [["os", "Gentoo Linux / OpenRC"], ["desktop", "Hyprland"], ["terminal", "fish / kitty / Neovim"]]},
-    {"title": "Compute", "rows": [["languages", "C++ / C / Python"], ["gpu", "CUDA / cuBLAS / cuSOLVER"], ["parallel", "OpenMP / MPI"], ["debug", "perf / GDB"]]},
-    {"title": "Work", "rows": [["StriZ", "error-bounded GPU compression"], ["EMNIST", "neural-network benchmarking"], ["ii-gentoo", "Gentoo packaging"]]}
+    {
+      "title": "Workstation",
+      "rows": [
+        [
+          "os",
+          "Gentoo Linux / OpenRC"
+        ],
+        [
+          "desktop",
+          "Hyprland"
+        ],
+        [
+          "terminal",
+          "fish / kitty / Neovim"
+        ]
+      ]
+    },
+    {
+      "title": "Compute",
+      "rows": [
+        [
+          "languages",
+          "C++ / C / Python"
+        ],
+        [
+          "gpu",
+          "CUDA / cuBLAS / cuSOLVER"
+        ],
+        [
+          "parallel",
+          "OpenMP / MPI"
+        ],
+        [
+          "debug",
+          "perf / GDB"
+        ]
+      ]
+    },
+    {
+      "title": "Work",
+      "rows": [
+        [
+          "StriZ",
+          "error-bounded GPU compression"
+        ],
+        [
+          "networks",
+          "neural-network benchmarking"
+        ],
+        [
+          "ii-gentoo",
+          "Gentoo packaging"
+        ]
+      ]
+    }
   ],
-  "links": [["EMNIST", "https://github.com/jwihardi/neural-network-EMNIST"], ["ii-gentoo", "https://github.com/jwihardi/illogical-impulse-gentoo-overlay"]],
-  "art": {"heading": "EMNIST / forward pass", "architecture": "784 → hidden → 10", "note": "digits · schematic", "prediction": "7"},
+  "links": [
+    [
+      "Neural networks",
+      "https://github.com/jwihardi/neural-network-EMNIST"
+    ],
+    [
+      "ii-gentoo",
+      "https://github.com/jwihardi/illogical-impulse-gentoo-overlay"
+    ]
+  ],
   "themes": {
-    "dark": {"bg": "#0c141f", "fg": "#e4edf3", "muted": "#94a7b8", "guide": "#293b4c", "accent": "#8edce8", "amber": "#e8b96b"},
-    "light": {"bg": "#f5f8fa", "fg": "#203446", "muted": "#526979", "guide": "#c4d1da", "accent": "#087488", "amber": "#916019"}
+    "dark": {
+      "bg": "#0c141f",
+      "fg": "#e4edf3",
+      "muted": "#94a7b8",
+      "guide": "#293b4c",
+      "accent": "#8edce8"
+    },
+    "light": {
+      "bg": "#f5f8fa",
+      "fg": "#203446",
+      "muted": "#526979",
+      "guide": "#c4d1da",
+      "accent": "#087488"
+    }
   }
 }

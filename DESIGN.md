@@ -1,19 +1,15 @@
 # Profile design
 
-One continuous terminal surface: original ASCII handwriting and a sparse neural
-network occupy approximately 40%; an aligned workstation/compute/work grid occupies
-60%. The only strong color is ice cyan, with amber reserved for the prediction.
-No personal biography, decorative cards, badges, gradients or animation.
+A continuous terminal surface with a large, dense neural network on the left and
+an aligned workstation/compute/work grid on the right. Seven layers and many fine
+connections form the main visual; cyan paths and filled neurons trace activations.
+The network is abstract, not a claim about any project's architecture. No digit,
+EMNIST label, statistics, biography, badges, decorative cards, gradients or animation.
 
-`profile/content.json` owns all text and theme tokens. `scripts/render.py` consumes
-those tokens directly for every SVG. `profile/digit.txt` owns the original digit.
-DejaVu Sans Mono, Consolas, monospace keep text and ASCII on a fixed grid. Desktop
-is 900 × 432; below a 600 px viewport the picture selects a 420 × 820 stacked panel.
-Meaningful image alt text and SVG title/description accompany real Markdown links.
+`profile/content.json` owns text and theme tokens. `profile/network.json` owns the
+artwork dimensions and layer sizes; `scripts/artwork.py` draws it. Both themes and
+layouts use these same sources through `scripts/render.py`.
 
-The forward pass is an illustrative digit-7 schematic, not an inference result or
-accuracy claim. Architecture comes from neural-network-EMNIST: 784 inputs, one
-configurable hidden layer, 10 classes for digits. Circles sample the layers; cyan
-edges illustrate activation, not measured weights. The ReLU label follows the CUDA
-implementation. Reference principles: Andrew6rant's fixed grid and picture theme
-selection; no reference artwork or source code reused.
+DejaVu Sans Mono, Consolas, monospace maintain the terminal grid. Desktop is
+900 × 406; below 600 px the picture selects a 420 × 770 stacked panel. Meaningful
+alt text and SVG descriptions accompany real Markdown project links.
