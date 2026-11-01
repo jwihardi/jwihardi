@@ -18,3 +18,7 @@ The terminal heading is `jacub@genpoo`. Three artwork options share the same rig
 column, red palette and responsive geometry. Alternatives are a quantized wireframe
 signal landscape and a 32-lane GPU execution schematic; neither represents real
 benchmark data. Preview assets live under `assets/variants/`.
+
+The warp alternative uses a flowing trace composition: four lane bundles fan out
+from a compact issue stream, carry staggered instruction packets, and reconverge
+at a dashed join boundary. It stays static, red, and explicitly schematic.
