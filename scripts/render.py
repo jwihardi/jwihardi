@@ -19,8 +19,8 @@ def line(x, y, xx, yy, color='guide', width=1):
 def render(data, theme, mobile=False, variant="network"):
     descriptions = {"network": "A densely connected multilayer neural network.", "compression": "A wireframe signal landscape transitioning into quantized terraces.", "warp": "A schematic GPU warp trace with 32 lanes, branching execution and reconvergence."}
     drawings = {"network": lambda: artwork(json.loads((ROOT / "profile/network.json").read_text())), "compression": compression_artwork, "warp": warp_artwork}
-    extra_rows = sum(len(group["rows"]) for group in data["groups"]) - 10
-    w, h = (420, 770 + extra_rows * 22) if mobile else (900, 406 + extra_rows * 22)
+    extra_rows = max(0, len(data["rows"]) - 12)
+    w, h = (420, 770 + extra_rows * 26) if mobile else (900, 406 + extra_rows * 26)
     colors = data['themes'][theme]
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="title desc">',
            '<title id="title">GPU computing, Linux, Windows and game development</title>',
@@ -32,23 +32,19 @@ def render(data, theme, mobile=False, variant="network"):
     x, top = (28, 400) if mobile else (404, 40)
     out.append(text(x, top, data['heading'], 'fg', 20))
     out.append(text(w - 40, top, '_', 'accent', 20))
-    y = top + 38
-    for group in data['groups']:
-        out.append(text(x, y, group['title'], 'accent', 15))
-        out.append(line(x + 112, y - 5, w - 28, y - 5))
-        y += 24
-        for label, value in group['rows']:
-            size = 14 if mobile else 16
-            out.append(text(x, y, label, 'muted', size))
-            out.append(text(x + (99 if mobile else 110), y, value, 'fg', size))
-            y += 22
-        y += 12
+    out.append(line(x, top + 16, w - 28, top + 16))
+    y = top + 43
+    for label, value in data['rows']:
+        size = 14 if mobile else 16
+        out.append(text(x, y, label, 'accent', size))
+        out.append(text(x + (99 if mobile else 110), y, value, 'fg', size))
+        y += 26
     out.append('</svg>\n')
     return ''.join(out)
 
 
 def readme(data):
-    alt = 'Terminal profile: a densely connected multilayer neural network with fine red connections. Gentoo Linux and Windows; C++, C, Rust, Assembly, Python, Bash and CUDA; game development with Unreal, Unity, Godot and C#.'
+    alt = 'Terminal profile: a densely connected multilayer neural network with fine red connections. Gentoo Linux and Windows; C++, C, Java, Python, Assembly, Bash and CUDA; game development with Unreal, Unity and Godot.'
     return f'''<picture>
   <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/profile-mobile-dark.svg">
   <source media="(max-width: 600px)" srcset="assets/profile-mobile-light.svg">

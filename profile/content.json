@@ -1,66 +1,5 @@
 {
   "heading": "jacub@genpoo",
-  "groups": [
-    {
-      "title": "Workstation",
-      "rows": [
-        [
-          "os",
-          "Gentoo Linux / Windows"
-        ],
-        [
-          "linux",
-          "OpenRC / Hyprland"
-        ],
-        [
-          "terminal",
-          "fish / kitty / Neovim"
-        ]
-      ]
-    },
-    {
-      "title": "Compute",
-      "rows": [
-        [
-          "systems",
-          "C++ / C / Rust / Assembly"
-        ],
-        [
-          "scripting",
-          "Python / Bash"
-        ],
-        [
-          "gpu",
-          "CUDA / cuBLAS / cuSOLVER"
-        ],
-        [
-          "parallel",
-          "OpenMP / MPI"
-        ],
-        [
-          "debug",
-          "perf / GDB"
-        ]
-      ]
-    },
-    {
-      "title": "Game dev",
-      "rows": [
-        [
-          "engines",
-          "Unreal / Unity / Godot"
-        ],
-        [
-          "languages",
-          "C++ / C#"
-        ],
-        [
-          "tools",
-          "Blender / Roblox Studio"
-        ]
-      ]
-    }
-  ],
   "links": [
     [
       "Neural networks",
@@ -86,5 +25,55 @@
       "guide": "#c4d1da",
       "accent": "#a83543"
     }
-  }
+  },
+  "rows": [
+    [
+      "os",
+      "Gentoo Linux / Windows"
+    ],
+    [
+      "linux",
+      "OpenRC / Hyprland"
+    ],
+    [
+      "shell",
+      "fish / Bash"
+    ],
+    [
+      "terminal",
+      "kitty"
+    ],
+    [
+      "editor",
+      "Neovim"
+    ],
+    [
+      "languages",
+      "C++ / C / Java / Python"
+    ],
+    [
+      "low-level",
+      "Assembly"
+    ],
+    [
+      "gpu",
+      "CUDA / cuBLAS / cuSOLVER"
+    ],
+    [
+      "parallel",
+      "OpenMP / MPI"
+    ],
+    [
+      "debug",
+      "perf / GDB"
+    ],
+    [
+      "engines",
+      "Unreal / Unity / Godot"
+    ],
+    [
+      "tools",
+      "Blender / Roblox Studio"
+    ]
+  ]
 }
