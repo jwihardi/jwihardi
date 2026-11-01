@@ -48,7 +48,8 @@ def main():
     if token:
         from history import GitHub, collect_history, load_cache, save_cache
         cache_path = ROOT / '.cache/history.enc'
-        totals, cache = collect_history(GitHub(token), cache=load_cache(cache_path, token))
+        totals, cache = collect_history(GitHub(token), cache=load_cache(cache_path, token),
+                                        checkpoint=lambda progress: save_cache(cache_path, token, progress))
         result.update(totals)
         result['history_as_of'] = datetime.now(timezone.utc).date().isoformat()
         save_cache(cache_path, token, cache)

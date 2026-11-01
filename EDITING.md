@@ -81,3 +81,13 @@ virtual environment. Run `ACCESS_TOKEN=... python scripts/stats.py` using a secu
 injected environment variable, then `python scripts/render.py`. Rendering and
 public-only fetching still use the standard library. The workflow installs the
 cache encryption dependency automatically.
+
+Large-history fallback: if GraphQL repeatedly returns an internal error, the
+scanner retries smaller pages, then tries the REST commit-history endpoint with
+the same author and pinned head. If that also fails, it uses GitHub's indexed
+commit search. Indexed results must be complete and below the 1,000-result cap;
+each matching commit is checked for ancestry against the pinned head before its
+line counts are added. Incomplete/capped results abort publication. Indexed
+histories are rechecked on subsequent runs because search indexing can lag.
+Encrypted per-repository checkpoints survive failures, but public totals and SVGs
+are published only when the whole scan succeeds.

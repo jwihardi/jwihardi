@@ -29,7 +29,7 @@ jobs:
       - name: Install cache encryption
         run: python -m pip install 'cryptography>=44,<47'
       - name: Restore encrypted history cache
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: .cache/history.enc
           key: profile-history-v1-${{ github.run_id }}-${{ github.run_attempt }}
@@ -40,6 +40,12 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: python scripts/stats.py
+      - name: Save encrypted checkpoints
+        if: ${{ always() && hashFiles('.cache/history.enc') != '' }}
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/history.enc
+          key: profile-history-v1-${{ github.run_id }}-${{ github.run_attempt }}
       - name: Render profile
         run: python scripts/render.py
       - name: Commit updates

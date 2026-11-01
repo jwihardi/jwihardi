@@ -80,3 +80,61 @@ class HistoryTests(unittest.TestCase):
             self.assertNotIn(b'private-identity',file.read_bytes())
             self.assertEqual(load_cache(file,'test-token'),value)
             self.assertIsNone(load_cache(file,'different-token'))
+
+    def test_rest_fallback_pages_and_filters_authors(self):
+        from history import GitHub
+        client = GitHub('test-only')
+        lookup = {'repository':{'nameWithOwner':'owner/repo'}, 'author':{'login':'jwihardi'}}
+        requests = []
+        def get(url):
+            requests.append(url)
+            if 'sha=' in url:
+                return [{'sha':'one','author':{'node_id':'author'}},
+                        {'sha':'other','author':{'node_id':'another'}}], '<https://api.github.com/next>; rel="next"'
+            if url.endswith('/next'):
+                return [{'sha':'one','author':{'node_id':'author'}},
+                        {'sha':'two','author':{'node_id':'author'}}], ''
+            return {'stats':{'additions':8,'deletions':3}}, ''
+        with patch.object(GitHub,'__call__',return_value=lookup), patch.object(client,'rest_get',side_effect=get):
+            result = client.rest_history({'repo':'repo','head':'tip','author':'author'})
+        nodes = result['node']['object']['history']['nodes']
+        self.assertEqual([n['oid'] for n in nodes], ['one','two'])
+        self.assertEqual(len(requests),4)
+
+    def test_checkpoint_survives_later_failure(self):
+        checkpoints = []
+        def failing(q,v):
+            if q == HISTORY and v['repo'] == 'b':
+                raise HistoryError('transient')
+            return self.query(q,v)
+        with self.assertRaises(HistoryError):
+            collect_history(failing, checkpoint=checkpoints.append)
+        self.assertEqual(set(checkpoints[-1]['repos']), {'a'})
+        result, _ = collect_history(self.query, cache=checkpoints[-1])
+        self.assertEqual(result['commits'],2)
+
+    def test_indexed_fallback_checks_ancestry(self):
+        from history import GitHub
+        client = GitHub('test-only')
+        def get(url):
+            if '/search/' in url:
+                return {'total_count':2,'incomplete_results':False,'items':[
+                    {'sha':'ancestor','author':{'node_id':'author'}},
+                    {'sha':'side-branch','author':{'node_id':'author'}}]}, ''
+            if '/compare/ancestor' in url:
+                return {'status':'ahead'}, ''
+            if '/compare/side-branch' in url:
+                return {'status':'diverged'}, ''
+            return {'stats':{'additions':8,'deletions':3}}, ''
+        with patch.object(client,'rest_get',side_effect=get):
+            result = client.search_history('https://api.github.com/repos/owner/repo','owner/repo','jwihardi',{'head':'tip','author':'author'})
+        conn = result['node']['object']['history']
+        self.assertEqual([n['oid'] for n in conn['nodes']], ['ancestor'])
+        self.assertTrue(conn['indexed'])
+
+    def test_indexed_fallback_refuses_partial_results(self):
+        from history import GitHub
+        client = GitHub('test-only')
+        with patch.object(client,'rest_get',return_value=({'total_count':1,'incomplete_results':True,'items':[]},'')):
+            with self.assertRaises(HistoryError):
+                client.search_history('base','owner/repo','jwihardi',{'head':'tip','author':'author'})
