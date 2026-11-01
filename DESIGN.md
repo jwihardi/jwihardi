@@ -2,7 +2,7 @@
 
 A continuous terminal surface with a large, dense neural network on the left and
 an aligned workstation/compute/work grid on the right. Seven layers and many fine
-connections form the main visual; cyan paths and filled neurons trace activations.
+connections form the main visual; muted red connections and outlined neurons create a uniform mesh.
 The network is abstract, not a claim about any project's architecture. No digit,
 EMNIST label, statistics, biography, badges, decorative cards, gradients or animation.
 

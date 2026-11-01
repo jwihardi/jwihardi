@@ -73,14 +73,14 @@
       "fg": "#e4edf3",
       "muted": "#94a7b8",
       "guide": "#293b4c",
-      "accent": "#8edce8"
+      "accent": "#ed8b91"
     },
     "light": {
       "bg": "#f5f8fa",
       "fg": "#203446",
       "muted": "#526979",
       "guide": "#c4d1da",
-      "accent": "#087488"
+      "accent": "#a83543"
     }
   }
 }

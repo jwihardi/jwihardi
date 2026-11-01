@@ -21,7 +21,7 @@ def render(data, theme, mobile=False):
     colors = data['themes'][theme]
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="title desc">',
            '<title id="title">GPU computing, Linux and neural networks</title>',
-           '<desc id="desc">A large, densely connected multilayer neural network with highlighted cyan signal paths. Workstation, compute tools and projects.</desc>',
+           '<desc id="desc">A large, densely connected multilayer neural network with fine red connections. Workstation, compute tools and projects.</desc>',
            '<style>:root{' + ';'.join(f'--{k}:{v}' for k, v in colors.items()) + '}text{font-family:"DejaVu Sans Mono",Consolas,monospace;white-space:pre}' + ''.join(f'.{k}{{fill:var(--{k})}}' for k in colors) + '</style>',
            f'<path fill="var(--bg)" d="M0 0h{w}v{h}H0z"/>']
     ax, ay = (28, 40)
@@ -45,7 +45,7 @@ def render(data, theme, mobile=False):
 
 
 def readme(data):
-    alt = 'Terminal profile: a densely connected multilayer neural network with cyan signal paths. Gentoo Linux and OpenRC; C++, C, Python and CUDA; GPU compression, neural-network benchmarking and Gentoo packaging.'
+    alt = 'Terminal profile: a densely connected multilayer neural network with fine red connections. Gentoo Linux and OpenRC; C++, C, Python and CUDA; GPU compression, neural-network benchmarking and Gentoo packaging.'
     return f'''<picture>
   <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/profile-mobile-dark.svg">
   <source media="(max-width: 600px)" srcset="assets/profile-mobile-light.svg">
