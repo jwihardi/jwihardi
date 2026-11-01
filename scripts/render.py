@@ -23,7 +23,8 @@ def render(data, theme, mobile=False, variant="network"):
     drawings = {"network": lambda: artwork(json.loads((ROOT / "profile/network.json").read_text())), "compression": compression_artwork, "warp": warp_artwork}
     w = 420 if mobile else 900
     stats = data.get('stats')
-    x, top = (18, 500 if stats else 410) if mobile else (430, 28)
+    history_ready = bool(stats and all(key in stats for key in ('commits', 'additions', 'deletions')))
+    x, top = (18, (580 if history_ready else 500) if stats else 410) if mobile else (430, 28)
     size, leading = 15, 20
     char_width = size * 0.6
     label_x = x + 2 * char_width
@@ -54,6 +55,8 @@ def render(data, theme, mobile=False, variant="network"):
                 wrapped.extend(textwrap.wrap(current, width=row_columns, break_long_words=False, break_on_hyphens=False))
             rows.extend((label if i == 0 else '', part) for i, part in enumerate(wrapped))
     h = top + 28 + len(rows) * leading + 16
+    if history_ready and not mobile:
+        h = max(h, 572)
     colors = data['themes'][theme]
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="title desc">',
            '<title id="title">GPU computing, Linux, Windows and game development</title>',
@@ -67,13 +70,19 @@ def render(data, theme, mobile=False, variant="network"):
         sx, sy = 18, 394 if mobile else 418
         end = 400
         out.append(text(sx, sy, '- GitHub ' + '─' * 33, 'fg', 15))
-        for i, (label, key) in enumerate([('Public repos', 'repos'), ('Stars', 'stars')]):
+        entries = [('Public repos', 'repos'), ('Stars', 'stars')]
+        if history_ready:
+            entries += [('Commits', 'commits'), ('Lines +', 'additions'), ('Lines −', 'deletions')]
+        for i, (label, key) in enumerate(entries):
+            value = f"{stats[key]:,}"
             y = sy + 24 + i * 20
             out.append(text(sx, y, '. ' + label + ':', 'accent', 15))
             dot_x = sx + (len(label) + 4) * 9
-            count = max(0, int((end - len(str(stats[key])) * 9 - dot_x) / 9) - 1)
+            count = max(0, int((end - len(value) * 9 - dot_x) / 9) - 1)
             out.append(text(dot_x, y, '.' * count, 'muted', 15))
-            out.append(text(end, y, str(stats[key]), 'value', 15, 'text-anchor="end"'))
+            out.append(text(end, y, value, 'value', 15, 'text-anchor="end"'))
+        if history_ready:
+            out.append(text(sx, sy + 132, 'history as of ' + stats.get('history_as_of', 'unknown'), 'muted', 13))
     columns = int((w - 18 - x) / char_width)
     out.append(text(x, top, data['heading'] + ' ' + '─' * (columns - len(data['heading']) - 1), 'fg', size))
     y = top + 28
@@ -104,6 +113,8 @@ def readme(data, revision):
     details = '; '.join((row['section'] if isinstance(row, dict) else f'{row[0]}: {row[1]}') for row in data['rows'] if row)
     if data.get('stats'):
         details += f"; public owned non-fork repos: {data['stats']['repos']}; stars received: {data['stats']['stars']}"
+    if data.get('stats') and 'commits' in data['stats']:
+        details += f"; all-time authored commits in accessible default branches: {data['stats']['commits']}; lines added: {data['stats']['additions']}; lines deleted: {data['stats']['deletions']}"
     alt = escape(f"Terminal profile: {descriptions[data.get('artwork', 'network')]}. {details}.", quote=True)
     return f'''<picture>
   <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jwihardi/jwihardi/main/assets/rendered/profile-mobile-dark-{revision}.svg">

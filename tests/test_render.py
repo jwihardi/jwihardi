@@ -26,3 +26,17 @@ class GeneratorTests(unittest.TestCase):
             tree = ET.fromstring(render.render(data, theme))
             return [(e.attrib, e.text) for e in tree.findall('.//s:text', ns)]
         self.assertEqual(elements('dark'), elements('light'))
+
+    def test_history_stats_layout_has_space(self):
+        data = json.loads((render.ROOT / 'profile/content.json').read_text())
+        data['stats'] = {'repos':1,'stars':2,'commits':3,'additions':4,'deletions':5,
+                         'history_as_of':'2000-01-01'}
+        for mobile in (False, True):
+            tree = ET.fromstring(render.render(data, 'dark', mobile, 'warp'))
+            ns = {'s':'http://www.w3.org/2000/svg'}
+            labels = {e.text:e for e in tree.findall('s:text', ns)}
+            self.assertIn('. Commits:', labels)
+            self.assertIn('. Lines +:', labels)
+            self.assertIn('. Lines −:', labels)
+            bottom = float(tree.attrib['height'])
+            self.assertTrue(all(float(e.attrib['y']) < bottom for e in tree.findall('s:text', ns)))

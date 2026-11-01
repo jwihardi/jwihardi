@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Fetch owned public non-fork repository and star counts, across every page."""
 import json
+from datetime import datetime, timezone
 import os
 from pathlib import Path
 import re
@@ -39,9 +40,27 @@ def fetch_stats(user='jwihardi', request=request_json):
 
 
 def main():
-    # Finish all API requests before replacing the last successful snapshot.
-    result = fetch_stats()
+    # Fetch everything before replacing the last successful public snapshot.
     path = ROOT / 'profile/stats.json'
+    previous = json.loads(path.read_text()) if path.exists() else {}
+    result = fetch_stats()
+    token = os.environ.get('ACCESS_TOKEN')
+    if token:
+        from history import GitHub, collect_history, load_cache, save_cache
+        cache_path = ROOT / '.cache/history.enc'
+        totals, cache = collect_history(GitHub(token), cache=load_cache(cache_path, token))
+        result.update(totals)
+        result['history_as_of'] = datetime.now(timezone.utc).date().isoformat()
+        save_cache(cache_path, token, cache)
+    else:
+        print('ACCESS_TOKEN is not configured; commit/line totals cannot be refreshed.')
+        if os.environ.get('GITHUB_STEP_SUMMARY'):
+            with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+                summary.write('History totals need an `ACCESS_TOKEN` repository secret. Public counts updated; existing history totals preserved.\n')
+        # Keep the last successful totals, with their original observation date.
+        for key in ('commits', 'additions', 'deletions', 'history_scope', 'history_as_of'):
+            if key in previous:
+                result[key] = previous[key]
     content = json.dumps(result, indent=2) + '\n'
     if not path.exists() or path.read_text() != content:
         temporary = path.with_suffix('.tmp')

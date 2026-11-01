@@ -39,4 +39,5 @@ The warp artwork has no title or bottom explanatory caption. Its issue/diverge/j
 labels and lane markers remain. Accessibility descriptions still explain the image.
 
 Public stats use the last successful API snapshot in profile/stats.json.
-No commit or line-change totals are shown until their scope and access are settled.
+Commit and line-change rows appear only after a successful authenticated history
+scan. Their snapshot date is shown below. The block and mobile panel expand to fit.
