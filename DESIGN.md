@@ -1,8 +1,9 @@
 # Profile design
 
-A GitHub-code-block appearance: rounded charcoal/light-gray surface, 16-unit monospace type, 22-unit line spacing, dotted leaders, red labels and
+A GitHub-code-block appearance: rounded charcoal/light-gray surface, 15-unit monospace type, 20-unit line spacing, dotted leaders, red labels and
 yellow values (darker ochre in light mode for contrast). The
-terminal heading is `jacub@genpoo`. Related rows are separated by one blank line, without section headings. No statistics.
+terminal heading is `jacub@genpoo`. Related rows are separated by one single-dot spacer line. A Previous heading
+uses a horizontal text rule; the terminal heading uses the same rule. No statistics.
 
 `profile/content.json` owns all content and palette tokens. `scripts/render.py`
 owns the shared layout; desktop width is 900 and mobile width is 420. Height follows content and
@@ -30,3 +31,6 @@ is 1.05× and retains the stacked layout.
 Hobbies use Hobbies.General, Hobbies.Software and Hobbies.Videogames labels.
 Desktop wrapping reserves room for each label; mobile places these long labels
 on their own line so values remain readable. Music stays below the hobbies.
+
+Previous lists user-provided Leidos SWE and AWS SDE internships. Python and
+Hypixel Skyblock are omitted; software hobbies read roblox dev / sys work.

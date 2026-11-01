@@ -52,7 +52,7 @@
     null,
     [
       "languages",
-      "C++ / C / Java / Python"
+      "C++ / C / Java"
     ],
     [
       "low-level",
@@ -86,15 +86,27 @@
     ],
     [
       "hobbies.software",
-      "Roblox game development / Systems work"
+      "roblox dev / sys work"
     ],
     [
       "hobbies.videogames",
-      "Valorant / Destiny 2 / Hypixel Skyblock"
+      "Valorant / Destiny 2"
     ],
     [
       "music",
       "Joji / Hans Zimmer / Matt Maltese"
+    ],
+    null,
+    {
+      "section": "Previous"
+    },
+    [
+      "leidos",
+      "SWE intern"
+    ],
+    [
+      "aws",
+      "SDE intern"
     ]
   ],
   "artwork": "warp"
