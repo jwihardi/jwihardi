@@ -31,3 +31,6 @@ uses the flowing vector trace: edit `warp_artwork()` in `scripts/artwork.py`. Th
 
 Use `null` between row groups for one blank line. Values use the theme `value`
 color; labels use `accent`. Long values wrap automatically on narrow layouts.
+
+The README image URLs include a deterministic content hash. Regenerating changed
+SVGs changes the URLs, preventing stale GitHub image caches from hiding edits.
