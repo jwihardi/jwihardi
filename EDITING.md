@@ -28,7 +28,7 @@ mobile sizes for both themes. `network-*` retains the current neural network;
 `compression-*` uses a signal landscape; `warp-*` uses a schematic GPU warp trace.
 The new artwork functions live in `scripts/artwork.py`. These are illustrations,
 not measurements. The main README uses the variant selected by `artwork` in `profile/content.json`
-(currently `warp`).
+(currently `gpu-die`).
 
 The shared panel now uses code-block typography and dotted leaders. The warp option
 uses the flowing vector trace: edit `warp_artwork()` in `scripts/artwork.py`. The embedded SVG is an image, not selectable README text.

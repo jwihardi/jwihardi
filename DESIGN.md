@@ -16,7 +16,7 @@ use the same text list and theme tokens. SVG title/description and meaningful
 README alt text provide context; real Markdown project links sit below the panel.
 
 The SVG resembles terminal text but remains an embedded image, not a native
-copyable Markdown code fence. The main README uses the warp alternative, selected by the artwork field in
+copyable Markdown code fence. The main README uses the exploded GPU die alternative, selected by the artwork field in
 profile/content.json.
 
 User-requested personal rows include hobbies, favorite games and music. Null rows
@@ -41,3 +41,6 @@ labels and lane markers remain. Accessibility descriptions still explain the ima
 Public stats use the last successful API snapshot in profile/stats.json.
 Commit and line-change rows appear only after a successful authenticated history
 scan. Their snapshot date is shown below. The block and mobile panel expand to fit.
+
+The selected live artwork is now `gpu-die`: three exploded isometric layers,
+with compute blocks, interconnects and substrate contacts. No artwork captions.
