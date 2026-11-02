@@ -63,7 +63,7 @@ def render(data, theme, mobile=False, variant="network"):
            f'<desc id="desc">{descriptions[variant]} Workstation, programming languages, compute tools, game development, hobbies, favorite games, music and previous internships.</desc>',
            '<style>:root{' + ';'.join(f'--{k}:{v}' for k, v in colors.items()) + '}text{font-family:Consolas,"Liberation Mono",Menlo,monospace;white-space:pre}' + ''.join(f'.{k}{{fill:var(--{k})}}' for k in colors) + '</style>',
            f'<rect width="{w}" height="{h}" rx="12" fill="var(--bg)"/>']
-    ax, ay = (18, 28)
+    ax, ay = (18, 0 if variant == "gpu-die" else 28)
     scale = 1.05 if mobile else 1.12
     out.append(f'<g transform="translate({ax} {ay}) scale({scale})">{drawings[variant]()}</g>')
     if stats:
