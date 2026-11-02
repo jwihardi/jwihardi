@@ -139,7 +139,7 @@ def main():
     revision = hashlib.sha256(''.join(outputs.values()).encode()).hexdigest()[:12]
     for path, svg in list(outputs.items()):
         outputs[ROOT / 'assets/rendered' / f'{path.stem}-{revision}.svg'] = svg
-    outputs[ROOT / 'README.md'] = readme(data, revision)
+    outputs[ROOT / 'README.md'] = readme(data, revision).rstrip() + '\n'
     for variant in ('network', 'compression', 'warp'):
         for theme in data['themes']:
             for mobile in (False, True):
