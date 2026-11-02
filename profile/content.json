@@ -1,15 +1,6 @@
 {
   "heading": "jacub@genpoo",
-  "links": [
-    [
-      "Neural networks",
-      "https://github.com/jwihardi/neural-network-EMNIST"
-    ],
-    [
-      "ii-gentoo",
-      "https://github.com/jwihardi/illogical-impulse-gentoo-overlay"
-    ]
-  ],
+  "links": [],
   "themes": {
     "dark": {
       "bg": "#161b22",
@@ -101,12 +92,12 @@
       "section": "Previous"
     },
     [
-      "leidos",
-      "SWE intern"
-    ],
-    [
       "aws",
       "SDE intern"
+    ],
+    [
+      "leidos",
+      "SWE intern"
     ]
   ],
   "artwork": "warp"
