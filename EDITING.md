@@ -91,3 +91,8 @@ line counts are added. Incomplete/capped results abort publication. Indexed
 histories are rechecked on subsequent runs because search indexing can lag.
 Encrypted per-repository checkpoints survive failures, but public totals and SVGs
 are published only when the whole scan succeeds.
+
+Two additional preview variants are generated: `fourier-*` (elliptical harmonic
+epicycles and their trajectory) and `gpu-die-*` (an exploded abstract GPU package).
+Their drawing functions are in `scripts/artwork.py`. They share all profile data
+and palettes; neither changes the selected live artwork.

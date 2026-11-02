@@ -5,7 +5,7 @@ import hashlib
 import textwrap
 from pathlib import Path
 from html import escape
-from artwork import artwork, compression_artwork, warp_artwork
+from artwork import artwork, compression_artwork, warp_artwork, fourier_artwork, gpu_die_artwork
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -19,8 +19,8 @@ def line(x, y, xx, yy, color='guide', width=1):
 
 
 def render(data, theme, mobile=False, variant="network"):
-    descriptions = {"network": "A densely connected multilayer neural network.", "compression": "A wireframe signal landscape transitioning into quantized terraces.", "warp": "A schematic GPU warp trace with 32 lanes, branching execution and reconvergence."}
-    drawings = {"network": lambda: artwork(json.loads((ROOT / "profile/network.json").read_text())), "compression": compression_artwork, "warp": warp_artwork}
+    descriptions = {"network": "A densely connected multilayer neural network.", "compression": "A wireframe signal landscape transitioning into quantized terraces.", "warp": "A schematic GPU warp trace with 32 lanes, branching execution and reconvergence.", "fourier": "Elliptical Fourier harmonics with epicycles and a traced orbit.", "gpu-die": "An exploded isometric GPU package with compute blocks, interconnects and substrate."}
+    drawings = {"network": lambda: artwork(json.loads((ROOT / "profile/network.json").read_text())), "compression": compression_artwork, "warp": warp_artwork, "fourier": fourier_artwork, "gpu-die": gpu_die_artwork}
     w = 420 if mobile else 900
     stats = data.get('stats')
     history_ready = bool(stats and all(key in stats for key in ('commits', 'additions', 'deletions')))
@@ -109,7 +109,7 @@ def render(data, theme, mobile=False, variant="network"):
 
 
 def readme(data, revision):
-    descriptions = {'network': 'a densely connected neural network', 'compression': 'a wireframe compression landscape', 'warp': 'a flowing GPU warp trace with 32 lanes'}
+    descriptions = {'network': 'a densely connected neural network', 'compression': 'a wireframe compression landscape', 'warp': 'a flowing GPU warp trace with 32 lanes', 'fourier': 'elliptical Fourier harmonics', 'gpu-die': 'an exploded GPU package'}
     details = '; '.join((row['section'] if isinstance(row, dict) else f'{row[0]}: {row[1]}') for row in data['rows'] if row)
     if data.get('stats'):
         details += f"; public owned non-fork repos: {data['stats']['repos']}; stars received: {data['stats']['stars']}"
@@ -140,7 +140,7 @@ def main():
     for path, svg in list(outputs.items()):
         outputs[ROOT / 'assets/rendered' / f'{path.stem}-{revision}.svg'] = svg
     outputs[ROOT / 'README.md'] = readme(data, revision).rstrip() + '\n'
-    for variant in ('network', 'compression', 'warp'):
+    for variant in ('network', 'compression', 'warp', 'fourier', 'gpu-die'):
         for theme in data['themes']:
             for mobile in (False, True):
                 name = f'{variant}-{"mobile-" if mobile else ""}{theme}.svg'
